@@ -24,8 +24,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductResponseDto> searchByCriteria(List<SearchCriteria> listSearchCriteria) {
-        ProductSpecification productSpecification = new ProductSpecification();
-        listSearchCriteria.forEach(productSpecification::add);
+        ProductSpecification productSpecification = new ProductSpecification(listSearchCriteria);
         return ConvertUtil.convertListEntityToListResponse(
                 productRepository.findAll(productSpecification), ProductResponseDto.class);
     }

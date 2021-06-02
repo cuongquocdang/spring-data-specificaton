@@ -9,7 +9,11 @@ public class SearchCriteria {
 
     private String key;
 
-    private Object value;
+    private String value;
+
+    private String fromValue;
+
+    private String toValue;
 
     private SearchOperation operation;
 
